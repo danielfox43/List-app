@@ -1,12 +1,46 @@
 let list = [];
-document.getElementById("edit_name").addEventListener("click", ChangeName);
+
 document.getElementById("cancel_description").addEventListener("click", Cancel);
 document.getElementById("add_tag").addEventListener("click", OpenTagPop);
 document.getElementById("add_color_tag").addEventListener("click", CreateTag);
+document.getElementById("side").addEventListener("click", function(){
+
+quest = document.createElement('li');
+quest.setAttribute("class", 'quest');
+quest.innerHTML = `<div>
+       <input type="text" class="input" minlength="8" maxlenght="53"><button onclick="AddQuest(this)" type="submit" class="add">Add</button>
+   </div>
+  <button onclick="RemoveQuest(this, this.parentNode.id.substring(9))" class="delete">Delete</button>`;
+document.getElementById("check_list").appendChild(quest);
+quest.scrollIntoView();
+});
 const tag_list = document.getElementById("tag_list");
 const edit_description = document.getElementById("edit_description");
 const description = document.getElementById("description");
 let opened = false;
+function RemoveQuest(me, quest_id) {
+  const task = list.find(task => task.id === me.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id);
+  console.log(quest_id)
+  task.quests.splice(task.quests.findIndex(side_quest => side_quest.nr == quest_id), 1);
+  me.parentNode.remove();
+  console.log(task)
+}
+function AddQuest(me) {
+const task = list.find(task => task.id === me.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id);
+
+let side_quest = {
+  nr: Date.now(),
+  name: me.parentNode.children[0].value,
+  done: false,
+  
+}
+side_quest.ui =  `<li class="quest" id="quest_nr.${side_quest.nr}"><div>${side_quest.name}</div>
+  <button onclick="this.parentNode.remove()" class="delete">Delete</button></li>`;
+me.parentNode.parentNode.setAttribute('id', 'quest_nr.' + side_quest.nr);
+task.quests.push(side_quest);
+console.log(task)
+me.parentNode.innerHTML = side_quest.name;
+}
 function AddTask(id, taskn, element) {
    if(taskn.value != "") {
    let task = {
@@ -15,16 +49,16 @@ function AddTask(id, taskn, element) {
    id: id,
    description: "",
    tags: [],
+   quests: [],
   };
   list.push(task);
   console.log(list);
-  element.innerHTML = `<input type="checkbox" onclick="Done(this.parentNode.parentNode.id)"><b id="${task.id}">${task.task_name}<b>
-  `;
+  element.innerHTML = `<input type="checkbox" onclick="Done(this.parentNode.parentNode.id)"><b id="${task.id}_name">${task.task_name}<b>`;
   const edit = document.createElement("button");
   edit.innerHTML  = "edit";
   edit.setAttribute("class", "edit");
-  edit.setAttribute("onclick", "OpenPop(this.parentNode.id)")
-  const li = document.getElementById(id);
+  edit.setAttribute("onclick", "OpenPop(this.parentNode.id.substring(1))")
+  const li = document.getElementById('l' + id);
   li.appendChild(edit);
 
    }
@@ -33,10 +67,10 @@ function AddTask(id, taskn, element) {
  function RenderList(id) {
    const scr = document.getElementsByClassName("screen")[0];
   const it = document.createElement("li");
-  it.setAttribute("id", id);
+  it.setAttribute("id", 'l' + id);
    it.innerHTML = `
    <div class="stuff">
-       <input type="text" id="${id + 'n'}" class="input" minlength="3"><button onclick="AddTask(this.parentNode.parentNode.id, document.getElementById(this.parentNode.parentNode.id + 'n'), this.parentNode)" type="submit" class="add">Add</button>
+       <input type="text" id="${id + 'n'}" class="input" minlength="3"><button onclick="AddTask(this.parentNode.parentNode.id.substring(1), document.getElementById((this.parentNode.parentNode.id.substring(1)) + 'n'), this.parentNode)" type="submit" class="add">Add</button>
    </div>
   <button onclick="RemoveTask(this.parentNode.id)" class="delete">Delete</button>
   
@@ -73,8 +107,12 @@ function AddTask(id, taskn, element) {
     pop.children[0].id = task_id;
     pop.style.display = "flex";
     description.innerHTML = `${task.description}`;
-    document.getElementById("Title").innerHTML = `<button style="background: none; border: none; cursor: pointer;" onclick=""><img src="/icons/edit-3-svgrepo-com.svg" width="32px" height="32px" style="vertical-align: bottom;"></button>${task.task_name}`;
-    
+    document.getElementById("Title").innerHTML = `<button style="background: none; border: none; cursor: pointer;" onclick="ChangeName(this)"><img src="/icons/edit-3-svgrepo-com.svg" width="32px" height="32px" style="vertical-align: bottom;"></button>${task.task_name}`;
+    document.getElementById("check_list").innerHTML = '';
+    for (let i = 0; i < task.quests.length; i++) {
+      document.getElementById("check_list").innerHTML = document.getElementById("check_list").innerHTML + task.quests[i].ui;
+      
+    }
  }
  function EditDescription(id) {
   const task = list.find(task => task.id === id);
@@ -91,9 +129,17 @@ function AddDescription(id) {
   document.getElementsByClassName("add_cancel")[1].style.display = "none";
   document.getElementsByClassName("add_cancel")[0].style.display = "none";
 }
-function ChangeName(event) {
-this.parentNode.innerHTML = ``;
+function ChangeName(name) {
+
+name.parentNode.innerHTML = `<input id="new_name" type="text" style="font-size: medium; margin-bottom: 10px; padding: 8px; border-radius: 10px; border: 1px gray solid; background-color: #f5f5f5;"><button onclick="addName(this.parentNode)">Done</button>`;
 }
+function addName(new_name) {
+const task = list.find(task => task.id === new_name.parentNode.parentNode.id);
+task.task_name = document.getElementById("new_name").value;
+new_name.innerHTML = `<button style="background: none; border: none; cursor: pointer;" onclick="ChangeName(this)"><img src="/icons/edit-3-svgrepo-com.svg" width="32px" height="32px" style="vertical-align: bottom;"></button>${task.task_name}`;
+document.getElementById('l' + task.id).children[0].children[1].innerHTML = task.task_name;
+}
+
 function Cancel() {
   const task = list.find(task => task.id === this.parentNode.parentNode.parentNode.id);
   console.log(this.parentNode.parentNode.parentNode.id);
