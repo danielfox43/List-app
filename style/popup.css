@@ -18,7 +18,7 @@
     width: 50%;
     max-height: 90%; /* Ensure the popup doesn't exceed the viewport height */
     overflow-y: auto; /* Allow vertical scrolling within the popup */
-    border-radius: 50px;
+    border-radius: 30px;
     padding: 3%;
     padding-top: 1%;
 }
@@ -38,9 +38,9 @@
     right: 10px;
     }
     .navbar li button{
-    background-color: gray;
+    background-color: #2d314b;
     border: none;
-    border-radius: 30px;
+    border-radius: 10px;
     min-width: 83px;
     margin-top: 8px;
     min-height: 20px;
@@ -50,7 +50,7 @@
     }
     .navbar li button:hover {
     color: black;
-    background-color: #dddddd;
+    background-color: #ecefff;
     cursor: pointer;
     }
     .tag_pop {
@@ -61,7 +61,7 @@
     text-align: left;
     padding: 20px;
     margin-top: 10px;
-    border-radius: 30px;
+    border-radius: 10px;
     }
     .color_box input{
         appearance: none;
@@ -80,10 +80,36 @@
     }
     #check_list li {
         list-style: none;
-        margin-top: 30px;
-        background-color: rgb(221, 221, 221);
-        padding: 10%;
-        padding-top: 5%;
-        padding-right: 3%;
+        margin-top: 5px;
+
         border-radius: 10px;
+        padding: 2.5%;
+        vertical-align: bottom;
+    }
+    .text_check {
+        display: inline-block;
+    }
+    .checklist_buttons {
+    background-color: #2d314b;
+     border: none;
+     border-radius: 4px;
+     padding: 6px;
+     cursor: pointer;
+     color: aliceblue;
+     transition: 0.3s;
+     float: inline-end;
+    }
+    .checklist_buttons:hover {
+    
+    background-color: #f0f2ff;
+    color: rgb(34, 34, 34);
+    transition: 0.3s;
+    }
+    .tags {
+        margin-left: 4px;
+        border-radius: 4px;
+        padding: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        vertical-align: top;
     }

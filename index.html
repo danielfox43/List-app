@@ -13,8 +13,11 @@
     <div class="pop" id="popup">
         <div class="up">
             <div style="position: relative;">
-                <button style="border: none; background: none; float: right; vertical-align: top; cursor: pointer;" onclick="ClosePop()"><img src="/icons/close-ellipse-svgrepo-com.svg" width="32" height="32"></button>
+                <div class="popup_header">
+                    <button style="border: none; background: none; float: right; vertical-align: top; cursor: pointer;" onclick="ClosePop()"><img src="/icons/close-ellipse-svgrepo-com.svg" width="32" height="32"></button>
                   <h1 style="text-align: center;" id="Title"><button style="background: none; border: none; cursor: pointer;" id="edit_name"><img src="/icons/edit-3-svgrepo-com.svg" width="32px" height="32px" style="vertical-align: bottom;"></button>Example Title</h1>
+                </div>
+                
         <div style="display: inline-block; width: 70%;">
             <div>
                 <p><b>Tags:</b></p>
@@ -25,12 +28,12 @@
             <p style="margin-bottom: 3px;" id="description"><textarea style="resize: none; width: 100%; height: 200px; display: flex;"></textarea></p>
             <button onclick="AddDescription(this.parentNode.parentNode.parentNode.id)" class="add_cancel">Add</button><button class="add_cancel" id="cancel_description">Cancel</button>
             <div id="optional_list">
-                <p><b id="list">List:</b> <button id="side">Add side-quest</button></p>
+                <p><b id="list">List:</b> <button id="side" class="checklist_buttons">Add side-quest</button></p>
                 <ul id="check_list"></ul>
             </div>
         </div>
         <ul class="navbar">
-            <li><button>Mark as done</button></li>
+            <li><button>Mark as done</bvutton></li>
             <li><button>Time limit</button></li>
             <li><button id="add_tag">Add tag</button>
             <div class="tag_pop" id="tag_pop">
