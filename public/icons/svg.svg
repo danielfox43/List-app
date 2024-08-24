@@ -1,0 +1,17 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="svg_11_blur">
+   <feGaussianBlur stdDeviation="0" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <path stroke="#000" stroke-width="20" id="svg_1" d="m693.19634,302.08038l-288.59658,-287.4198l-288.59658,287.4198l288.59658,287.4198l288.59658,-287.4198z" fill="#fff"/>
+  <path id="svg_2" d="m-63.66553,547.3607l0.745,-0.745l0.745,0.745l-0.745,0.745l-0.745,-0.745z" stroke-width="20" stroke="#000" fill="#fff"/>
+  <text transform="rotate(-45 327.936 222.323)" stroke="#ffffff" font-style="normal" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="monospace" font-size="170" id="svg_3" y="278.99102" x="141.00387" stroke-width="7" fill="#000000">List</text>
+  <text transform="rotate(-45 528.13 276.017)" xml:space="preserve" text-anchor="start" font-family="monospace" font-size="200" id="svg_6" y="342.68508" x="363.18824" stroke-width="5" stroke="#ffffff" fill="#000000">app</text>
+  <path id="svg_8" d="m363.54016,508.41916l1.00291,-5.2818l2.74747,14.46243l4.57994,-24.10406l1.00327,5.27807l-5.5832,29.38959" stroke-width="10" stroke="#ffffff" fill="#000000"/>
+  <path transform="rotate(-45 387.864 432.679)" stroke="#ffffff" filter="url(#svg_11_blur)" id="svg_11" d="m322.76578,424.05686l13.98997,-18.89252l38.3253,51.7308l63.88703,-86.21799l13.99491,18.87917l-77.88195,105.12387" stroke-width="10" fill="#000000"/>
+  <rect transform="rotate(-45 386 460)" stroke="#000000" id="svg_13" height="101.66835" width="111.36446" y="409.16581" x="330.31778" stroke-width="10" fill="none"/>
+ </g>
+</svg>

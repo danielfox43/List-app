@@ -1,0 +1,157 @@
+.pop {
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.up {
+    background-color: white;
+    @media only screen and (max-width: 1020px) {
+        @media only screen and (max-width: 720px) {
+            min-height: 80%;
+            min-width: 87vw;            
+        }
+    min-height: 80%;
+    min-width: 70vw;
+    }
+    min-height: 70%;
+    width: 50%;          
+    max-height: 90%; /* Ensure the popup doesn't exceed the viewport height */
+    overflow-y: auto; /* Allow vertical scrolling within the popup */
+    border-radius: 5px;
+    border: 1px solid #2d314b;
+    padding: 3%;
+    padding-top: 1%;
+}
+.up::-webkit-scrollbar {
+    margin-left: 30px;
+}
+
+    .navbar {
+    padding: 0;
+    text-align: end;
+    list-style: none;
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    }
+    .navbar li button{
+    background-color: #2d314b;
+    border: none;
+    border-radius: 5px;
+    min-width: 83px;
+    margin-top: 8px;
+    min-height: 20px;
+    padding: 15px;
+    color: white;
+    font-size: medium;
+    border: 1px solid #282c46;
+    }
+    #edit_description, .btns {
+        float: right;
+        background-color: #2d314b;
+        border: 1px solid #2d314b;
+        padding: 3px 7px;
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .tag_pop {
+    position: fixed;
+    background-color: rgb(201, 201, 201);
+    width: 20%;
+    height: 200px;
+    text-align: left;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    }
+    .color_box input{
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        height: 3em;
+        padding: 0;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .add_cancel {
+        display: none;
+    }
+    #check_list li {
+        list-style: none;
+        margin-top: 5px;
+        background-color: #282c4613;
+        border-radius: 5px;
+        padding: 10px;
+        vertical-align: bottom;
+        border: 1px solid #282c46;
+    }
+    .quest {
+        min-height: 29px;
+    }
+    .quest:hover button{
+        display: inline-block;
+    }
+    .special {
+        border: none;
+        padding-bottom: 6px;
+        padding-top: 3px;
+    }
+    .quest:hover div input {
+        padding-bottom: 4px;
+        padding-top: 5px;
+    }
+    .checklist li:hover {
+        background-color: #282c46;
+    }
+    .disapear {
+        display: none;
+    }
+    .text_check {
+        display: inline-block;
+    }
+    .checklist_buttons {
+    background-color: #2d314b;
+     border: none;
+     border-radius: 5px;
+     padding: 6px;
+     cursor: pointer;
+     color: aliceblue;
+     transition: 0.3s;
+     float: inline-end;
+     border: 1px solid #282c46;
+    }
+    .checklist_buttons:hover, #edit_description:hover, .navbar li button:hover {
+    background-color: #f0f2ff;
+    color: rgb(34, 34, 34);
+    border: 1px solid #282c46;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+    .tags {
+        margin-left: 4px;
+        border-radius: 5px;
+        padding: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        vertical-align: top;
+    }
+#tag_list {
+    margin: 0;
+}

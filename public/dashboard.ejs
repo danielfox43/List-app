@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      body {
+  width: 100%;
+  height: 100%;
+}
+
+
+     .account{
+      list-style: none;
+      margin-left: 20px;
+     }
+     @media screen and (min-width: 1000px){
+      .dropdown-extra {
+      margin-left: -120px;
+     }
+    }
+    .search {
+      border-color: #2d314b;
+      color: #2d314b;
+      border-radius: 3px;
+    }
+    .form-control {
+      border-radius: 3px;
+    }
+    .search:hover {
+      border-color: #2d314b;
+      background-color: #2d314b;
+      color: white;
+    }
+    :not(.btn-check)+.btn:active {
+      background-color: #1f2133;
+      border-color: #1f2133;
+    }
+    .categories {
+      position: sticky;      
+      border-right: 1px solid black;
+      padding-right: 20px;
+      padding-left: 5px;
+      display: inline-block;
+      width: fit-content;
+      height: 88vh;
+      vertical-align: top;
+      background: rgb(248,249,250);
+      background: rgb(248,249,250);
+      background: rgb(248,249,250);
+      background: -moz-linear-gradient(180deg, rgba(248,249,250,1) 45%, rgba(255,255,255,0) 100%);
+      background: -webkit-linear-gradient(180deg, rgba(248,249,250,1) 45%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(180deg, rgba(248,249,250,1) 45%, rgba(255,255,255,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f8f9fa",endColorstr="#ffffff",GradientType=1);
+    }
+    .categories li {
+      padding: 5px;
+      list-style: none; 
+      display: flex;
+      padding-left: 8px;
+      padding-right: 8px;
+      border-radius: 3px;
+      margin-top: 4px;
+      border: 1px solid rgba(255, 255, 255, 0);
+      align-items: center;
+      gap: 6px;
+    }
+    .categories li:hover {
+      background-color: rgb(209, 209, 209);
+      cursor: pointer;
+    }
+    .categories li:active {
+      border: 1px solid black;
+    }
+    .screen {
+      display: inline-block;
+      margin-top: 3%;
+      flex: auto;
+      min-height: 240px;
+      flex-direction:row;
+    }
+    .screen h3 {
+      margin-left: 8px;
+    }
+    .add {
+      display: inline-block;
+      background-color: rgb(241, 241, 241);
+     height: 250px;
+     width: 200px;
+     text-align: center;
+     vertical-align: middle;
+     font-size: 80px;
+     font-weight: 900;
+     padding-bottom: 35px;
+    border-radius: 5px;
+    background-color: rgb(238, 238, 238);
+    }
+    .add:hover {
+      background-color: rgb(224, 224, 224);
+      cursor: pointer;
+      border: 1px solid black;
+    }
+    .workspace {
+      width: 100%;
+      display: flex;
+     float: left;
+    }
+    .list_card {
+      display: inline-block;
+      width: 200px;
+      min-height: 250px;
+      background-color: rgb(241, 241, 241);
+      border-radius: 5px;
+      border: 1px solid rgba(165, 42, 42, 0);
+    }
+    .list_card:hover {
+      border-color: black;
+
+    }
+    .list_card img {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      cursor: pointer;
+    }
+    .list_cards {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fill, 200px);
+      overflow-x: auto;
+    }
+    .list_title {
+      cursor: pointer;
+      word-wrap: break-word;
+    }
+    .desc {
+      font-size: 14px;
+      margin-left: 8px;
+      margin-top: 2px;
+      color: rgb(107, 107, 107);
+    }
+    .navbar {
+      border-bottom: 1px solid #1f2133;
+    }
+    dialog {
+      border-radius: 5px;
+      border: 1px solid #1f2133;
+      padding:20px;
+      padding-top: 5px;
+    }
+    dialog::backdrop {
+      background-color: #1f213327;
+    }
+    .list_add {
+      display: flex;
+      flex-direction:column;
+      gap: 8px;
+    }
+    .dialog_btn {
+      border: 1px solid #1f2133;
+      border-radius: 5px;
+      background-color: rgb(241, 241, 241);
+    }
+    .exit {
+      background: none;
+      border: none;
+      float: right;
+    }
+    .themes {
+     display: grid;
+     grid-template-columns: auto auto auto;
+     gap: 8px;
+    }
+    .themes div {
+      border-radius: 5px;
+      border: 1px solid #1f2133;
+      width: 100px;
+      height: 100px;    
+      cursor: pointer;
+    }
+    .theme1 {
+    --s: 82px;
+    --c1: #b2b2b2;
+    --c2: #ffffff;
+    --c3: #d9d9d9;
+    --_g: var(--c3) 0 120deg, #0000 0;
+    background: conic-gradient(from -60deg at 50% calc(100% / 3), var(--_g)),
+      conic-gradient(from 120deg at 50% calc(200% / 3), var(--_g)),
+      conic-gradient(
+        from 60deg at calc(200% / 3),
+        var(--c3) 60deg,
+        var(--c2) 0 120deg,
+        #0000 0
+      ),
+      conic-gradient(from 180deg at calc(100% / 3), var(--c1) 60deg, var(--_g)),
+      linear-gradient(
+        90deg,
+        var(--c1) calc(100% / 6),
+        var(--c2) 0 50%,
+        var(--c1) 0 calc(500% / 6),
+        var(--c2) 0
+      );
+    background-size: calc(1.732 * var(--s)) var(--s);
+}
+.theme2 {
+  background-image: linear-gradient(#ffffff 1.1rem, #ccc 1.2rem);
+  background-size: 100% 1.2rem;
+}
+.themes div b {
+  color: rgb(107, 107, 107, 0);
+  transition: 0.2s;
+}
+.themes div:hover b{
+  transition: 0.2s;
+  color: rgb(8, 8, 8);
+  
+}
+.theme3 {
+  background: linear-gradient(#3f87a6 10%, #ebf8e1a2 10%),
+    linear-gradient(to right, #ebf8e100 10%, #c73030 10% 10.2%, #ebf8e100 10.5%);
+  background-size: 100% 25px, 100% 100%;
+  background-repeat: repeat, no-repeat;
+}
+.theme4 {
+  background: linear-gradient(
+      45deg,
+      transparent 33.33%,
+      rgba(57, 144, 179, 0.1) 33.33%,
+      rgba(0, 0, 0, 0.1) 66.66%,
+      transparent 66.66%
+    ),
+    lightblue;
+  background-size: 20px 20px;
+}
+.theme5 {
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #e5e5f7 100px
+    ),
+    repeating-linear-gradient(#95b0ce8a, #c7b2e4);
+}
+.theme6 {
+  --size: 40px; /* control the size */
+  --color1: #f29c9c;
+  --color2: #ffd700;
+  --color3: #7ec8e3;
+  --cone: #8b4513;
+
+  background: radial-gradient(
+      circle at 50% 30%,
+      transparent 30%,
+      var(--color1) 31%
+    ),
+    radial-gradient(circle at 30% 70%, transparent 30%, var(--color2) 31%),
+    radial-gradient(circle at 70% 70%, transparent 30%, var(--color3) 31%),
+    linear-gradient(to bottom, var(--cone) 50%, transparent 50%);
+  background-size: var(--size) var(--size);
+}
+.theme {
+  padding: 10px 20px;
+}
+    </style>
+</head>
+<body class="theme5">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="/icons/svg.svg" width="80px" height="60px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success search" type="submit">Search</button>
+            </form>
+            <li class="nav-item dropdown account">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="/imgs/man.jpg" height="40" width="40" style="border-radius: 50%;">
+                </a>
+                <ul class="dropdown-menu dropdown-extra">
+                  <li class="dropdown-item"><b><%=username%></b></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/account">My account</a></li>
+                  <li><a class="dropdown-item" href="/settings">Settings</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><form action="/logout?_method=DELETE" method="POST">
+                    <button type="submit" class="dropdown-item"><b style="color: red;">Log out</b></button>
+                  </form>
+                    
+                  </li>
+                </ul>
+              </li>
+          </div>
+        </div>
+      </nav>
+     <div class="workspace">
+      <div style="height: 100%;">
+        <ul class="categories">
+        <h4>Categories</h4>
+        <li>
+        <img src="/icons/star.svg" width="20px" height="20px">
+          <a>Favorites</a></li>
+        <li><img src="/icons/recently.svg" width="20px" height="20px"><a>Used Recently</a></li>
+      </ul>
+      </div>
+      <div class="screen">
+        <h3 style="display: inline-block;"><img src="/icons/list.svg" width="32px" height="32px" style="vertical-align:top;"> <b style="vertical-align: text-topw;">Lists:</b></h3>
+        <div class="list_cards" style="margin-top: 35px; margin-left: 8px;">
+         <div class="add">+</div>
+         <% lists.forEach(function(item){%>
+        <div class="list_card">
+          <img src="/imgs/default.png" width="198" height="180" onclick="window.location='/user/list/<%= item.name %>'">
+           <div class="list_title">
+            <h3><%= item.name %></h3>
+            <p class="desc"><%= item.dateUpdated.dateUp %> at <%= item.dateUpdated.timeUp %></p>
+           </div>
+        </div>
+        <% }); %>
+        </div>
+      </div>
+     </div>
+     <dialog class="dialog_list">
+      <button id="close" class="exit"><img src="/icons/close-ellipse-svgrepo-com.svg" width="21" height="21"></button>
+      <h2 style="text-align: center; margin-top: 30px;">Create a list</h2>
+
+      <form action="/create-list" method="POST" class="list_add">
+        <input type="text" name="name" class="form-control me-2" placeholder="List Title" required>
+        <button type="button"  class="dialog_btn theme">Theme</button>
+        <input style="display: none;" id="theme_number" type="number" name="theme" value="2">
+        <input type="submit" class="dialog_btn">
+      </form>
+     </dialog>
+     <dialog class="theme_selector">
+      <button id="close_theme" class="exit"><img src="/icons/close-ellipse-svgrepo-com.svg" width="21" height="21"></button>
+      <div class="themes">
+       <div class="th theme1"><b>Blocks</b></div>
+       <div class="th theme2"><b>Paper</b></div>
+       <div class="th theme3"><b>Realer paper</b></div>
+       <div class="th theme4"><b>blue hot dawgs</b></div>
+       <div class="th theme5"><b>Cool waves</b></div>
+       <div class="th theme6"><b>Summer vibes</b></div>
+      </div>
+    </dialog>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+       <script src="/scripts/dashboard.js">
+
+       </script>
+    </body>
+</html>

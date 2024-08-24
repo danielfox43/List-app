@@ -1,0 +1,109 @@
+html, body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.space {
+    background-color: rgb(255, 232, 223);
+    border: 1px solid #2d314b;
+    padding: 2% 1%;
+    margin: 0vh 10vw;
+    border-radius: 5px;
+}
+.screen li {
+background-color: rgba(44, 44, 44, 0.267);
+border-radius: 5px;
+padding: 15px;
+margin: 10px;
+list-style: none;
+padding-bottom: 30px;
+border: 1px solid #2d314b;
+}
+.screen {
+    padding: 0;
+}
+#preview {
+transition: 1s;
+}
+header button {
+margin-right: 1%;
+padding: 1%;
+padding-left: 2%;
+padding-right: 2%;
+border-radius: 5px;
+border: none;
+border: #2d314b 1px solid;
+background-color: #2d314b;
+transition: 0.3s;
+color: white;
+}
+header button:hover {
+background-color: white;
+cursor: pointer;
+color: black;
+transition: 0.4s;
+}
+header button:active {
+background-color: #2d314b;
+transition: 0s;
+}
+header {
+margin-left: 5%;
+}
+.delete {
+float: right;
+vertical-align: top;
+border: none;
+border-radius: 5px;
+background-color: rgb(255, 55, 55);
+padding: 1%;
+color: white;
+border: red 1px solid;
+transition: 0.3s;
+}
+.delete:hover {
+cursor: pointer;
+background-color: #ffffff;
+color: red;
+transition: 0.4s;
+}
+.screen li div {
+display: inline-block;
+margin-top: 1%;
+min-width: 70%;
+}
+.input {
+border: none;
+border-radius: 5px;
+padding: 1%;
+}
+.add {
+border: none;
+border-radius: 5px;
+background-color: black;
+padding: 1%;
+color: #ffffff;
+border: black 3px solid;
+transition: 0.3s;
+margin-left: 4px;
+}
+.edit {
+float: right;
+vertical-align: top;
+border: none;
+border-radius: 5px;
+background-color: #2d314b;
+padding: 1%;
+color: white;
+border: #2d314b 1px solid;
+transition: 0.3s;
+margin-right: 10px;
+}
+.edit:hover {
+background-color: white;
+color: #2d314b;
+cursor: pointer;
+transition: 0.4s;
+}

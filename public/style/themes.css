@@ -1,0 +1,74 @@
+
+.theme1 {
+    --s: 82px;
+    --c1: #b2b2b2;
+    --c2: #ffffff;
+    --c3: #d9d9d9;
+    --_g: var(--c3) 0 120deg, #0000 0;
+    background: conic-gradient(from -60deg at 50% calc(100% / 3), var(--_g)),
+      conic-gradient(from 120deg at 50% calc(200% / 3), var(--_g)),
+      conic-gradient(
+        from 60deg at calc(200% / 3),
+        var(--c3) 60deg,
+        var(--c2) 0 120deg,
+        #0000 0
+      ),
+      conic-gradient(from 180deg at calc(100% / 3), var(--c1) 60deg, var(--_g)),
+      linear-gradient(
+        90deg,
+        var(--c1) calc(100% / 6),
+        var(--c2) 0 50%,
+        var(--c1) 0 calc(500% / 6),
+        var(--c2) 0
+      );
+    background-size: calc(1.732 * var(--s)) var(--s);
+}
+.theme2 {
+  background-image: linear-gradient(#ffffff 1.1rem, #ccc 1.2rem);
+  background-size: 100% 1.2rem;
+}
+
+.theme3 {
+    background: linear-gradient(#3f87a6 10%, #ebf8e1a2 10%),
+      linear-gradient(to right, #ebf8e100 10%, #c73030 10% 10.2%, #ebf8e100 10.5%);
+    background-size: 100% 25px, 100% 100%;
+    background-repeat: repeat, no-repeat;
+  }
+  .theme4 {
+    background: linear-gradient(
+        45deg,
+        transparent 33.33%,
+        rgba(57, 144, 179, 0.1) 33.33%,
+        rgba(0, 0, 0, 0.1) 66.66%,
+        transparent 66.66%
+      ),
+      lightblue;
+    background-size: 20px 20px;
+  }
+  .theme5 {
+    background-color: #e5e5f7;
+    opacity: 1;
+    background-image: repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0,
+        #e5e5f7 400px
+      ),
+      repeating-linear-gradient(#95b0ce8a, #c7b2e4);
+  }
+  .theme6 {
+    --size: 40px; /* control the size */
+    --color1: #f29c9c;
+    --color2: #ffd700;
+    --color3: #7ec8e3;
+    --cone: #8b4513;
+  
+    background: radial-gradient(
+        circle at 50% 30%,
+        transparent 30%,
+        var(--color1) 31%
+      ),
+      radial-gradient(circle at 30% 70%, transparent 30%, var(--color2) 31%),
+      radial-gradient(circle at 70% 70%, transparent 30%, var(--color3) 31%),
+      linear-gradient(to bottom, var(--cone) 50%, transparent 50%);
+    background-size: var(--size) var(--size);
+  }

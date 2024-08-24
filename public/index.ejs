@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <link href="/style/style.css" rel="stylesheet" type="text/css">
+    <link href="/style/popup.css" rel="stylesheet" type="text/css">
+    <link href="/style/themes.css" rel="stylesheet" type="text/css">
+    
+</head>
+<body class="<%= list.theme%>">
+    <div class="pop" id="popup">
+        <div class="up">
+            <div style="position: relative;">
+                <div class="popup_header">
+                    <button style="border: none; background: none; float: right; vertical-align: top; cursor: pointer;" onclick="ClosePop()"><img src="/icons/close-ellipse-svgrepo-com.svg" width="32" height="32"></button>
+                  <h1 style="text-align: center;" id="Title"><button style="background: none; border: none; cursor: pointer;" id="edit_name"><img src="/icons/edit-3-svgrepo-com.svg" width="32px" height="32px" style="vertical-align: bottom;"></button>Example Title</h1>
+                </div>
+                
+        <div style="display: inline-block; width: 70%;">
+            <div>
+                <p><b>Tags:</b></p>
+                <ul id="tag_list"></ul>
+            </div>
+            
+            <p><b><img src="/icons/menu-alt-2-svgrepo-com.svg" width="20px" height="20px" style="vertical-align: bottom;">Description:</b> <button onclick="EditDescription(this.parentNode.parentNode.parentNode.parentNode.id)" id="edit_description">edit</button></p>
+            <p style="margin-bottom: 3px;" id="description"><textarea style="resize: none; width: 100%; height: 200px; display: flex;"></textarea></p>
+            <button onclick="AddDescription(this.parentNode.parentNode.parentNode.id)" class="add_cancel">Add</button><button class="add_cancel" id="cancel_description">Cancel</button>
+            <div id="optional_list">
+                <p><b id="list">List:</b> <button id="side" class="checklist_buttons">Add side-quest</button></p>
+                <ul id="check_list"></ul>
+            </div>
+        </div>
+        <ul class="navbar">
+            <li><button>Mark as done</bvutton></li>
+            <li><button>Time limit</button></li>
+            <li><button id="add_tag">Add tag</button>
+            <div class="tag_pop" id="tag_pop">
+                <b>Tag Name:</b>
+                <br><input type="text" style="width: 93%; font-size: large; margin-bottom: 10px; padding: 8px; border-radius: 10px; border: 1px gray solid; background-color: #f5f5f5; margin-top: 10px;" id="tag_name"></br>
+                <b>Tag Color:</b>
+                <div class="color_box">
+                  <input type="color" id="tag_color">  
+                </div>
+                <button class="btns" id="add_color_tag">Add</button>
+            </div>
+            
+            </li>
+        </ul>
+            </div>
+          
+        </div>
+    </div>
+    <div class="title" style="text-align: center;">
+        <h1>
+          <%= list.name%>
+        </h1>
+    </div>
+    <div class="space">
+    <header><button onclick="RenderList(Date.now())">Add task</button><button onclick="DeleteThyTasks()">Delete done</button></header>
+    <ul class="screen">
+        <li>
+            <div class="stuff">
+                <input type="checkbox" onclick="Done(this.parentNode.parentNode.id)">name sokad
+                <p><button></button></p>
+            </div>
+           <button onclick="RemoveTask(this.parentNode.id)" class="delete">Delete</button>
+           <button class="edit" onclick="OpenPop(this.parentNode.id)">edit</button>
+        </li>
+    </ul>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    const socket = io();
+    </script>
+    <script src="/scripts/script.js">
+
+    </script>
+</body>
+</html>
