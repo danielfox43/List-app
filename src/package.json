@@ -1,0 +1,43 @@
+{
+  "name": "list-app",
+  "version": "1.0.0",
+  "description": "A list app made with HTML, CSS and JS along with a express JS back end",
+  "main": "index.js",
+  "scripts": {
+    "ds": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielfox43/List-app.git"
+  },
+  "keywords": [
+    "List",
+    "app",
+    "app",
+    "list"
+  ],
+  "author": "Daniel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielfox43/List-app/issues"
+  },
+  "homepage": "https://github.com/danielfox43/List-app#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "connect-mongo": "^5.1.0",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.18.0",
+    "method-override": "^3.0.0",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
